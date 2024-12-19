@@ -6,15 +6,19 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DreieckHUE {
 
-    public static int a,b,c;
+    public static double a,b,c;
     public static void sort() {
-        int h;
+        double h;
         if (a > b) { h=a; a=b; b=h; }
         if (a > c) { h=a; a=c; c=h; }
         if (b > c) { h=b; b=c; c=h; }
     }
+    
+    public static String bestimmeDreieck(double a, double b, double c) {
+        return "kein";
+    }
 
-    public static void testeSort(int a1,int b1,int c1,int a2,int b2,int c2) {
+    public static void testeSort(double a1,double b1,double c1,double a2,double b2,double c2) {
         a=a1; b=b1; c=c1;
         sort();
         assertEquals(a2,a);
@@ -32,5 +36,16 @@ public class DreieckHUE {
         testeSort(3,4,2,2,3,4);
         testeSort(3,4,3,3,3,4);
         testeSort(4,3,3,3,3,4);
+    }
+    
+    @Test
+    public void testBestimmeDreieck() {
+        assertEquals("kein",bestimmeDreieck(2,4,12));
+        assertEquals("rechtwinkeliges",bestimmeDreieck(3,4,5));
+        assertEquals("gleichschenkeliges",bestimmeDreieck(3,3,4));
+        assertEquals("gleichschenkeliges",bestimmeDreieck(3,4,4));
+        assertEquals("gleichseitiges",bestimmeDreieck(2,2,2));
+        assertEquals("allgemeines",bestimmeDreieck(2,3,3.2));
+        assertEquals("gleichseitiges",bestimmeDreieck(1.99999999,2,2.000000001));
     }
 }
