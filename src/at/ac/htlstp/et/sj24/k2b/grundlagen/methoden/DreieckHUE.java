@@ -1,9 +1,5 @@
 package at.ac.htlstp.et.sj24.k2b.grundlagen.methoden;
 
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class DreieckHUE {
 
     public static double a,b,c;
