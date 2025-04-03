@@ -1,13 +1,11 @@
 package at.ac.htlstp.et.sj24.k2b.grundlagen.graphisch;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
 
-public class Linie4  extends MyFrame {
+public class Linie4 extends MyFrame {
 
     public static final int HEAD = 25;
     public static final int FOOT = 5;
-
 
     public Linie4(String title, int width, int height) {
         super(title, width, height);
@@ -15,7 +13,7 @@ public class Linie4  extends MyFrame {
     }
 
     public static void main(String[] args) {
-        new Linie4("Rechteck Muster SMUE", 800, 600);
+        new Linie4("Rechteck Muster", 800, 600);
     }
 
     @Override
