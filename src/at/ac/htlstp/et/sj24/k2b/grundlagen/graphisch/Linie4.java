@@ -1,14 +1,18 @@
 package at.ac.htlstp.et.sj24.k2b.grundlagen.graphisch;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 
 public class Linie4 extends MyFrame {
 
     public static final int HEAD = 25;
     public static final int FOOT = 5;
 
+    private Color farbe;
+
     public Linie4(String title, int width, int height) {
         super(title, width, height);
+        farbe = Color.blue;
         setVisible(true);
     }
 
@@ -18,7 +22,7 @@ public class Linie4 extends MyFrame {
 
     @Override
     public void paint(Graphics g){
-        g.setColor(Color.blue);
+        g.setColor(farbe);
         int w = getWidth();
         int h = getHeight();
         /*g.drawLine(0,0,w/4,h/4);
@@ -34,5 +38,15 @@ public class Linie4 extends MyFrame {
         g.drawRect(w/4,HEAD+h/4,w/2,h/2);
     }
 
+    @Override public void keyPressed(KeyEvent e) {
+        boolean changed=true;
+        switch(e.getKeyChar()) {
+            case 'r': farbe = Color.red; break;
+            case 'g': farbe = Color.green; break;
+            case 'b': farbe = Color.blue; break;
+            default: changed=false; break;
+        }
+        if (changed) repaint();
+    }
 
 }
