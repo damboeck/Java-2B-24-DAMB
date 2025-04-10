@@ -1,6 +1,8 @@
 package at.ac.htlstp.et.sj24.k2b.grundlagen.graphisch;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
 
 public class Linie3 extends MyFrame{
 
@@ -17,5 +19,15 @@ public class Linie3 extends MyFrame{
     public void paint(Graphics g) {
         g.setColor(Color.black);
         g.drawLine(0,0,getWidth(),getHeight());
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+
     }
 }

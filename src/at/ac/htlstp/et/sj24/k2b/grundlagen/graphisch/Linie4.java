@@ -2,6 +2,7 @@ package at.ac.htlstp.et.sj24.k2b.grundlagen.graphisch;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
 
 public class Linie4 extends MyFrame {
 
@@ -49,4 +50,8 @@ public class Linie4 extends MyFrame {
         if (changed) repaint();
     }
 
+    @Override
+    public void mousePressed(MouseEvent e) {
+
+    }
 }

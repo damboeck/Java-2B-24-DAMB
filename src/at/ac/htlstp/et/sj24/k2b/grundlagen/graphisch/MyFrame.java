@@ -3,9 +3,12 @@ package at.ac.htlstp.et.sj24.k2b.grundlagen.graphisch;
 import java.awt.*;
 import java.awt.event.*;
 
-public class   MyFrame
+public abstract class   MyFrame
     extends    Frame
     implements WindowListener, ComponentListener, KeyListener, MouseListener, MouseMotionListener, MouseWheelListener {
+
+    public static final int HEAD = 30;
+    public static final int FRAME = 8;
 
     public MyFrame(String title, int width, int height) {
         super(title);
@@ -18,10 +21,8 @@ public class   MyFrame
         addMouseWheelListener(this);
     }
 
-    public static void main(String[] args) {
-        MyFrame frame = new MyFrame("Mein Fenster", 800, 600);
-        frame.setVisible(true);
-    }
+    @Override
+    public abstract void paint(Graphics g);
 
     @Override
     public void windowClosing(WindowEvent e) {
@@ -63,16 +64,11 @@ public class   MyFrame
     @Override public void keyTyped(KeyEvent e) {
 
     }
-    @Override public void keyPressed(KeyEvent e) {
-
-    }
+    @Override public abstract void keyPressed(KeyEvent e);
     @Override public void keyReleased(KeyEvent e) {
 
     }
     @Override public void mouseClicked(MouseEvent e) {
-
-    }
-    @Override public void mousePressed(MouseEvent e) {
 
     }
     @Override public void mouseReleased(MouseEvent e) {
