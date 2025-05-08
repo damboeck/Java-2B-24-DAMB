@@ -57,7 +57,8 @@ public class DrawLine extends MyFrame {
             case 'S' -> fillColor = Color.black;
         }
         if (drawMode==DrawMode.GUMMI) {
-            actual.setLineColor( lineColor);
+            actual.setLineColor(lineColor);
+            actual.setFillColor(fillColor);
             repaint();
         }
     }
@@ -66,10 +67,10 @@ public class DrawLine extends MyFrame {
     public void mousePressed(MouseEvent e) {
         switch(drawMode) {
             case NORMAL -> {
-                actual = new Linie(e.getPoint(), e.getPoint(), lineColor, fillColor, linewidth);
+                actual = new Rechteck(e.getPoint(), e.getPoint(), lineColor, fillColor, linewidth);
                 paintables.add(actual);
-                repaint();
                 drawMode = DrawMode.GUMMI;
+                repaint();
             }
             case GUMMI -> {
                 if (actual instanceof Editable) {

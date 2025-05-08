@@ -2,12 +2,12 @@ package at.ac.htlstp.et.sj24.k2b.grundlagen.graphisch;
 
 import java.awt.*;
 
-public class Zweipunkt implements Paintable, Editable{
+public abstract class Zweipunkt implements Paintable, Editable{
 
-    private Color fillcolor;
-    private Color linecolor;
-    private Point p1,p2;
-    private int   width;
+    protected Color fillcolor;
+    protected Color linecolor;
+    protected Point p1,p2;
+    protected int   width;
 
     public Zweipunkt(Point p1, Point p2, Color linecolor, Color fillcolor, int width) {
         this.p1 = p1;
@@ -15,12 +15,6 @@ public class Zweipunkt implements Paintable, Editable{
         this.linecolor = linecolor;
         this.fillcolor = fillcolor;
         this.width = width;
-    }
-
-    @Override
-    public void paint(Graphics g) {
-        g.setColor(linecolor);
-        g.drawLine(p1.x,p1.y,p2.x,p2.y);
     }
 
     @Override
@@ -34,7 +28,7 @@ public class Zweipunkt implements Paintable, Editable{
     }
 
     @Override
-    public void setFillColor(Color fillcolor) { }
+    public void setFillColor(Color fillcolor) { this.fillcolor = fillcolor; }
 
     @Override
     public Color getLineColor() {
@@ -65,14 +59,6 @@ public class Zweipunkt implements Paintable, Editable{
 
     public void setP2(Point p2) {
         this.p2 = p2;
-    }
-
-    public Color getLinecolor() {
-        return linecolor;
-    }
-
-    public void setLinecolor(Color linecolor) {
-        this.linecolor = linecolor;
     }
 
     @Override
